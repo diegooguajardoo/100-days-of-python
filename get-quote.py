@@ -1,5 +1,5 @@
 import random
-def master():
+def main():
   #print("Keep it logically awesome.")
 
   f = open("quotes.txt")
@@ -8,7 +8,7 @@ def master():
 
   last = 17
   rnd1 = random.randint(0, last)
-  rnd2 = random.randint(0, last)
+  
   next = rnd1 +1 
   
 
@@ -16,8 +16,7 @@ def master():
   print(quotes[rnd1])
   print(next +1)
   print(quotes[next])
-  print("also this")
-  print(rnd2)
-  print(quotes[rnd2])
-if __name__== "__master__":
-  master()
+  
+  
+if __name__== "__main__":
+  main()
