@@ -9,6 +9,7 @@ def main():
   last = 17
   rnd = random.randint(0, last)
 
+  print(rnd +1)
   print(quotes[rnd])
 
 if __name__== "__main__":
