@@ -8,9 +8,14 @@ def main():
 
   last = 17
   rnd = random.randint(0, last)
+  next = rnd +1 
 
   print(rnd +1)
   print(quotes[rnd])
+  
+  print(next +1)
+  print(quotes[next])
+  
 
 if __name__== "__main__":
   main()
