@@ -1,6 +1,17 @@
 password = "cheat"
 
 import random
+from tkinter import Y
+
+
+valid = input("Do you want a random song line? Y/N\n")
+
+try: 
+	valid = int(valid)
+	times = valid
+	valid = Y
+except:
+	pass
 
 def lyrics(song):
 	if song == 1:
@@ -14,16 +25,16 @@ def lyrics(song):
 	else:
 		print(song)
 
-valid = input("Do you want a random song line? Y/N\n")
-
-
 if valid == "Y" or valid == "y":
 	t = [1,2,3,4]
 	x = random.choice(t)
 	x = int(x)
 	try:
+
 		lyrics (x)
 		print("Good, that was song number",x)
+		print("times", times)
+
 	except:
 		quit()
 	
