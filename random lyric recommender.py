@@ -1,5 +1,6 @@
+password = "cheat"
+
 import random
-valid = input("Do you want a random song line? Y/N\n")
 
 def lyrics(song):
 	if song == 1:
@@ -13,6 +14,9 @@ def lyrics(song):
 	else:
 		print(song)
 
+valid = input("Do you want a random song line? Y/N\n")
+
+
 if valid == "Y" or valid == "y":
 	t = [1,2,3,4]
 	x = random.choice(t)
@@ -23,7 +27,7 @@ if valid == "Y" or valid == "y":
 	except:
 		quit()
 	
-elif valid == "cheat":
+elif valid == password:
 	lyrics("haz encontrado el santo grial")
 
 else:
