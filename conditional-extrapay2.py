@@ -2,21 +2,21 @@ hrs = input("Enter hours: ")
 regularrate = input("Enter rate: ")
 
 def computepay():
-    hrs = float(hrs)
-    regularrate = float(regularrate)
+	hrs = float(hrs)
+	regularrate = float(regularrate)
 	pay = hrs * regularrate
 	return pay	
 
 extrarate = regularrate * 1.5
 if hrs <= 40:
-    pay = hrs * regularrate
-    print(pay)
+	pay = hrs * regularrate
+	print(pay)
 else:
-    extrahrs = hrs - 40
-    pay = 40 * regularrate
-    extrapay = extrahrs * extrarate
-    pay = pay + extrapay
-    print(pay)
+	extrahrs = hrs - 40
+	pay = 40 * regularrate
+	extrapay = extrahrs * extrarate
+	pay = pay + extrapay
+	print(pay)
     #if extrahrs > 1:
     #    print("you got payed",extrahrs,"extra hours!")
     #else:
