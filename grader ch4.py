@@ -1,6 +1,6 @@
 def compute(sc):
 	try:
-		float(sc) or sc >1
+		float(sc) or sc >1 #si es numero o mas de 1
 		if sc <= 1:
 			if sc >= .9:
 				grade = "A"
@@ -15,7 +15,7 @@ def compute(sc):
 			print ("Your grade is:", grade)
 			return grade
 	except:
-		print("Bad score")
+		print("Bad score") #todo tipo de bad score
 
 
 score = input("What is the score? \n")
