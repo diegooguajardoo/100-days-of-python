@@ -1,13 +1,11 @@
 hrs = input("Enter hours: ")
 regularrate = input("Enter rate: ")
-def computepay():
-	
 
-try:
+def computepay():
     hrs = float(hrs)
     regularrate = float(regularrate)
-except:
-    print("Enter valid number")
+	pay = hrs * regularrate
+	return pay	
 
 extrarate = regularrate * 1.5
 if hrs <= 40:
