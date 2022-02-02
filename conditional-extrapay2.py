@@ -1,19 +1,15 @@
-def computepay(aliash, aliasr):
-	if aliash <= 40:
-		pay = aliash * aliasr
-		print(pay)
+def computepay(h, r):
+	if h > 40:
+		pay = (40 * r) + ((h - 40) * r * 1.5)
 	else:
-		extrahrs = aliash - 40
-		regpay = 40 * aliasr
-		extrapay = extrahrs * aliasr * 1.5
-		pay = regpay + extrapay
-		print(pay)
+		pay = h * r
 	return pay	
 
 floathrs = float(input("Enter hours: "))
 floatregularrate = float(input("Enter rate: "))
 
 p = computepay(floathrs, floatregularrate)
+print ("Pay", p)
 #pay = hrs * regularrate
 
 
