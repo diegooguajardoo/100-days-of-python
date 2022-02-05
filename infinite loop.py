@@ -26,14 +26,12 @@ while True:
 	if user_guess == random_number:
 		print("Right!")
 		break
+	elif user_guess > random_number:
+		print("Make it smaller\n")
 	else:
-		print("you got it wrong!")
-#	elif user_guess > top_of_range:
-#		print("Make it smaller\n")
-#	else:
-#		print("Make it higher\n")
-#	continue	
-#
+		print("Make it higher\n")
+	continue	
+
 
 print("you got it in", guesses, "guesses")
-print(random_number)
+print("The random number was ", random_number,".")
