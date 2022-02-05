@@ -16,7 +16,7 @@ while True:
 	random_number = random.randint(0,2)
 	#rock is 0, paper is 1 and scissors is 2
 	computer_pick = options[random_number]
-	print("Comptuer picked", computer_pick ".")
+	print("Comptuer picked", str(computer_pick) + ".")
 
 	if user_input == "rock" and computer_pick == "scissors":
 		print("You won")
