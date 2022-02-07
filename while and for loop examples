@@ -1,0 +1,22 @@
+
+usrinp = input("Do you want to play?: ")
+if usrinp != "y":
+	quit() 
+
+# while loop know the stoping conditions
+#while number > 0:
+#	number = number - 1
+#	print(number)
+
+# for loop, know the number of iterations
+import random
+
+maxnumb = int(input("Type any number:"))
+
+randrange = random.randint(0,maxnumb)
+
+for i in range(0, randrange):
+	print(i)
+	
+
+print("done")
