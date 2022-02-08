@@ -12,14 +12,13 @@ while True:
 		continue
 	if largest == None:
 		largest = num
-	if smallest == None:
 		smallest = num
 	
-	if num > largest:
+	if num >= largest:
 		largest = num
-	elif num < smallest:
+	if num <= smallest:
 		smallest = num
 	
 
-print("Maximum", largest)
-print("Minimun", smallest)
+print("Maximum is", largest)
+print("Minimum is" , smallest)
