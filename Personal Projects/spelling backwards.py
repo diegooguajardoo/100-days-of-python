@@ -6,3 +6,4 @@ while last > 0:
 	if last == 0: #si index (o sea variable "last") es cero, significa que es la primera letra
 		break
 print("Done")
+
