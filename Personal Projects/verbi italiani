@@ -1,9 +1,8 @@
 verbo = input("Aggiungere un verbo regolare al infinito per favore: ")
-longitudine = len(verbo)
 coniu = ["are", "ere", "ire"]
-if verbo[longitudine - 3] == "a":
+if verbo[- 3] == "a":
 	coniu = "-are"
-elif verbo[longitudine - 3] == "i":
+elif verbo[- 3] == "i":
 	coniu = "-ire"
 else:
 	coniu = "-ere"
