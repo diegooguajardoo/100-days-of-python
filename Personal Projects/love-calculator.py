@@ -27,7 +27,7 @@ for letters in love:
 	total_love = counts + total_love
 	print(f"{letters} occurs {counts} times.")
 
-score = str(total_true) + str(total_love)
+score = int(str(total_true) + str(total_love))
 
 #this block redoes a for loop for separate names print(f"For {name2}.")
 #for letters in true:
