@@ -7,10 +7,11 @@ lista = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia B
 for person in lista:
 	count += 1
 	for character in person:
-		print(character)
+		if character == "a":
+			print(f"Result: '{character}' found in {place}")
+		else:
+			print(character) #prints characters from list
 
-	if character == "a":
-		print(f"Result: '{character}' found in {place}")
-	else:
-		print(f"Not found anywhere {count}.")
+	#else:
+	#	print(f"Not found anywhere {count}.")
 
