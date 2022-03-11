@@ -23,12 +23,13 @@ for i in abcs:
 
 		for sample in person:
 			totalcaracteresind += 1
-			if sample == abcs[letteriter]:
+			if sample.lower() == abcs[letteriter]:
 				print(f"Result: '{sample}' found in {totalcaracteresind}th letter of {person} ")
 				resultcount += 1		
 			#else:
 				#print(f'"{abcs[lettercount]}" not found') #prints characters from list
 			linecount += 1
+
 		
 		
 	print(f'Letter result: La letra "{abcs[letteriter]}" apareció {resultcount} veces en total.\n')
