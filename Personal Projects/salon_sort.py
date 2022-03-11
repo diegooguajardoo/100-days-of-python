@@ -2,7 +2,7 @@ import itertools
 #place = 0
 alumnos = 0
 totalcaracteresind = 0
-abcs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
+abcs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
 letteriter = -1
 linecount = 0
 chartot = 0
@@ -25,14 +25,9 @@ for i in abcs:
 			totalcaracteresind += 1
 			if sample == abcs[letteriter]:
 				print(f"Result: '{sample}' found in {totalcaracteresind}th letter of {person} ")
-				resultcount += 1
-				
-
+				resultcount += 1		
 			#else:
 				#print(f'"{abcs[lettercount]}" not found') #prints characters from list
-	
-	
-	
 			linecount += 1
 		
 		
