@@ -3,7 +3,9 @@ n = 0
 alumnos = 0
 totalcaracteresind = 0
 abcs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
-letteriter = -1
+abcs2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
+letteriter1 = -1
+letteriter2 = -1
 linecount = 0
 chartot = 0
 letrasunicas = []
@@ -16,8 +18,8 @@ listastr = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugeni
             "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
 
 for i in abcs:
-	letteriter += 1
-	print(f"RESULTS FOR {abcs[letteriter]}.")
+	letteriter1 += 1
+	print(f"RESULTS FOR {abcs[letteriter1]}.")
 	if resultcount == 1:
 		personasunicas.append(personaunica)
 		lista.remove(personaunica)
@@ -28,7 +30,7 @@ for i in abcs:
 	for person in lista:
 		totalcaracteresind = 0
 		personaiter += 1
-		if letteriter == 0:
+		if letteriter1 == 0:
 			chartot = len(person) + chartot
 
 
@@ -36,13 +38,13 @@ for i in abcs:
 			totalcaracteresind += 1
 			linecount += 1
 			
-			if sample.lower() == abcs[letteriter]:
+			if sample.lower() == abcs[letteriter1]:
 				#print(f"Result: '{sample}' found in {totalcaracteresind}th letter of {person} ")
 				resultcount += 1
 				personaunica = person	
 			
 	if resultcount == 1:
-		letrasunicas.append(abcs[letteriter])
+		letrasunicas.append(abcs[letteriter1])
 		#print(personaiter)
 		#personasunicas.append(lista[personaiter])
 			#else:
@@ -50,13 +52,15 @@ for i in abcs:
 
 		
 		
-	print(f'Letter result: La letra "{abcs[letteriter]}" apareció {resultcount} veces en total.\n')
+	#print(f'Letter result: La letra "{abcs[letteriter1]}" apareció {resultcount} veces en total.\n')
 
-
-
-
-
-
+for i in abcs:
+	letteriter2 = 0
+	letteriter1 += 1
+	for j in abcs:
+		mix = abcs[letteriter1] + abcs2[letteriter2]
+		letteriter2 += 1
+		print(mix)
 
 
 
