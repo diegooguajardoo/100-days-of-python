@@ -4,12 +4,16 @@ alumnos = 0
 totalcaracteresind = 0
 abcs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
 abcs2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
+initialabcs = len(abcs)
 letteriter1 = -1
 letteriter2 = -1
 linecount = 0
+linecount2 = 0
+
 chartot = 0
 letrasunicas = []
 personasunicas = []
+silabasunicas = []
 resultcount = 0
 lista = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia Berlanga García", "Regina Cabada Aguirre", "Monteserrat Cantú Silva", "Valentina Alejandra Guadalupe Durán Lozano", "Danna Paola Galarza López", "Sofía Daniela Garza Villarreal", "Lizbeth Valeria González Sepúlveda", "Gustavo Emanuel Guerra Gómez", "Verónica Iga Gutiérrez", "Sara López Quiroz", "André Millán Rivera",
          "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
@@ -21,6 +25,7 @@ initiallen = len(lista)
 for i in abcs:
 	letteriter1 += 1
 	print(f"RESULTS FOR {abcs[letteriter1]}.")
+	
 	if resultcount == 1:
 		personasunicas.append(personaunica)
 		lista.remove(personaunica)
@@ -50,31 +55,53 @@ for i in abcs:
 		#personasunicas.append(lista[personaiter])
 			#else:
 				#print(f'"{abcs[lettercount]}" not found') #prints characters from list
+	if resultcount == 0:
+		abcs2.remove(abcs[letteriter1])
 
 		
 		
-	#print(f'Letter result: La letra "{abcs[letteriter1]}" apareció {resultcount} veces en total.\n')
+	print(f'Letter result: La letra "{abcs[letteriter1]}" apareció {resultcount} veces en total.\n')
 letteriter1 = -1
+
 for i in abcs:
 	letteriter2 = 0
 	letteriter1 += 1
 	for j in abcs:
-		syllable = abcs[letteriter1] + abcs2[letteriter2]
+		syllable = abcs[letteriter1] + abcs[letteriter2]
 		letteriter2 += 1
-		print(syllable)
+		#print(syllable)
+
+		if resultcount == 1:
+			personasunicas.append(personaunica)
+			
+			try:
+				lista.remove(personaunica)
+			except:
+				print("")
+				#print(f"{personaunica} ya no esta en la lista")
+			silabasunicas.append(silabaunica)
+		resultcount = 0
 
 		for persona in lista:
 			
 			iter1 = -1
-			iter2 = iter1 + 1
 			persona = persona + " "
 			for sample in persona:
-				newsample = str(persona[iter1] + persona[iter2])
+				newsample = str(persona[iter1] + persona[iter1+1])
 
 				if newsample.lower() == syllable:
-					print(f"Sample: {syllable} found in {persona}")
+					#print(f"Sample: {syllable} found in {persona}")
+					resultcount += 1
+					personaunica = persona
+					silabaunica = syllable
+
+					#continue
+				
 				iter1 += 1
+				linecount2 += 1
 				#print(newsample)
+		#if resultcount == 1:
+		#	silabasunicas.append(syllable)
 				
 
 
@@ -86,19 +113,31 @@ for i in abcs:
 
 #Resultados al final
 def pt_results():
-	print(f"Se analizaron {len(abcs)} letras.")
+	print(f"\nSe comenzó con {initialabcs} letras.")
 	print(f"La lista de letras buscadas son: {abcs}.")
-	print(f"Hay {initiallen} alumnos en la lista.")
+	print(f"\nQuedan {len(abcs2)} letras.")
+	print(f"La lista de letras sobrantes son: {abcs2}.")
+	print(f"\nHay {initiallen} alumnos en la lista.")
 	print(f"Hay {chartot} caracteres en total.")
 	#print(f'Final Result: "{abcs[0]}" se encontró {resultcount} veces en total.')
-	print(f"Se iteró la búsqueda {linecount} veces.")
 
-#Resultados de análisis
+pt_results()
+print(f"Se iteró la búsqueda para letras sencillas {linecount} veces.\n")
+print("SINGLE SEARCH RESULTS")
+print(f"Letras Unicas {letrasunicas}")
+
 for i in letrasunicas:
-	#print(personasunicas)
-	print(f"{personasunicas[0 + n]} tiene la letras {letrasunicas[0 + n]}")
-	print(f"Letras Unicas {letrasunicas[0 + n]}")
+	print(f" {i}. {personasunicas[0 + n]} tiene la letra {letrasunicas[0 + n]}")
+	n += 1
+print("\n")
+
+
+print("DOUBLE SEARCH RESULTS")
+for i in silabasunicas:
+	print(f"{i} part of {personasunicas[0 + n]}")
 	n += 1
 
-
-
+print(f"\nSILABAS UNICAS: {len(silabasunicas)}")
+print(silabasunicas)
+print(f"Se iteró la segunda búsqueda {linecount2} veces.")
+print(len(lista))
