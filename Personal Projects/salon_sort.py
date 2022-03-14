@@ -9,9 +9,9 @@ chartot = 0
 letrasunicas = []
 personasunicas = []
 resultcount = 0
-lista2 = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia Berlanga García", "Regina Cabada Aguirre", "Monteserrat Cantú Silva", "Valentina Alejandra Guadalupe Durán Lozano", "Danna Paola Galarza López", "Sofía Daniela Garza Villarreal", "Lizbeth Valeria González Sepúlveda", "Gustavo Emanuel Guerra Gómez", "Verónica Iga Gutiérrez", "Sara López Quiroz", "André Millán Rivera",
+lista = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia Berlanga García", "Regina Cabada Aguirre", "Monteserrat Cantú Silva", "Valentina Alejandra Guadalupe Durán Lozano", "Danna Paola Galarza López", "Sofía Daniela Garza Villarreal", "Lizbeth Valeria González Sepúlveda", "Gustavo Emanuel Guerra Gómez", "Verónica Iga Gutiérrez", "Sara López Quiroz", "André Millán Rivera",
          "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
-lista = ["Victoria Aguayo Sepúlveda","Amelie Balderrama Ramírez","Anabella Bueno","Geovani Gamaliel Camarillo Castro","María Fernanda Castillo Navarro","Mariangela De León Martínez","Jesús Gerardo De León Rivera","Alejandro Elizondo Peña","Jimena Flores","Renata García Morales","Eunise Victoria González Villarreal","Emilio González Álvarez","Ángela Regina Gutiérrez Arredondo","Nicole Dominick Jaubert Martínez","Jimena Lara Leija","Daniel de Jesús Maldonado Rodríguez","Salvador Muñoz Lavin","Daniela Ortega Martínez","Narcedalia Perales Lozano","Jimena María Peña Treviño","Valeria Pérez Estrada","Mariana Quiroz Hernández","Barbara Rodríguez de la Torre","Eugenia Ruiz Ransom","Mariangela Astrea Salinas Flores","Carlos Alonso Serroque Palacios","Paulina Silva Rivera"]
+lista2 = ["Victoria Aguayo Sepúlveda","Amelie Balderrama Ramírez","Anabella Bueno","Geovani Gamaliel Camarillo Castro","María Fernanda Castillo Navarro","Mariangela De León Martínez","Jesús Gerardo De León Rivera","Alejandro Elizondo Peña","Jimena Flores","Renata García Morales","Eunise Victoria González Villarreal","Emilio González Álvarez","Ángela Regina Gutiérrez Arredondo","Nicole Dominick Jaubert Martínez","Jimena Lara Leija","Daniel de Jesús Maldonado Rodríguez","Salvador Muñoz Lavin","Daniela Ortega Martínez","Narcedalia Perales Lozano","Jimena María Peña Treviño","Valeria Pérez Estrada","Mariana Quiroz Hernández","Barbara Rodríguez de la Torre","Eugenia Ruiz Ransom","Mariangela Astrea Salinas Flores","Carlos Alonso Serroque Palacios","Paulina Silva Rivera"]
 listastr = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia Berlanga García", "Regina Cabada Aguirre", "Monteserrat Cantú Silva", "Valentina Alejandra Guadalupe Durán Lozano", "Danna Paola Galarza López", "Sofía Daniela Garza Villarreal", "Lizbeth Valeria González Sepúlveda", "Gustavo Emanuel Guerra Gómez", "Verónica Iga Gutiérrez", "Sara López Quiroz", "André Millán Rivera",
             "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
 
@@ -20,6 +20,7 @@ for i in abcs:
 	print(f"RESULTS FOR {abcs[letteriter]}.")
 	if resultcount == 1:
 		personasunicas.append(personaunica)
+		lista.remove(personaunica)
 	resultcount = 0
 	
 	
@@ -52,7 +53,7 @@ for i in abcs:
 	print(f'Letter result: La letra "{abcs[letteriter]}" apareció {resultcount} veces en total.\n')
 
 
-#def list_overwrite():
+
 
 
 
@@ -77,6 +78,7 @@ for i in letrasunicas:
 	print(f"Letras Unicas {letrasunicas[0 + n]}")
 	n += 1
 
+print(f"lista: {lista}")
 	#else:
 	#	print(f"Not found anywhere {count}.")
 
