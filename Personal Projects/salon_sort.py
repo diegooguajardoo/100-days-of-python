@@ -16,6 +16,7 @@ lista = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia B
 lista2 = ["Victoria Aguayo Sepúlveda","Amelie Balderrama Ramírez","Anabella Bueno","Geovani Gamaliel Camarillo Castro","María Fernanda Castillo Navarro","Mariangela De León Martínez","Jesús Gerardo De León Rivera","Alejandro Elizondo Peña","Jimena Flores","Renata García Morales","Eunise Victoria González Villarreal","Emilio González Álvarez","Ángela Regina Gutiérrez Arredondo","Nicole Dominick Jaubert Martínez","Jimena Lara Leija","Daniel de Jesús Maldonado Rodríguez","Salvador Muñoz Lavin","Daniela Ortega Martínez","Narcedalia Perales Lozano","Jimena María Peña Treviño","Valeria Pérez Estrada","Mariana Quiroz Hernández","Barbara Rodríguez de la Torre","Eugenia Ruiz Ransom","Mariangela Astrea Salinas Flores","Carlos Alonso Serroque Palacios","Paulina Silva Rivera"]
 listastr = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugenia Berlanga García", "Regina Cabada Aguirre", "Monteserrat Cantú Silva", "Valentina Alejandra Guadalupe Durán Lozano", "Danna Paola Galarza López", "Sofía Daniela Garza Villarreal", "Lizbeth Valeria González Sepúlveda", "Gustavo Emanuel Guerra Gómez", "Verónica Iga Gutiérrez", "Sara López Quiroz", "André Millán Rivera",
             "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
+initiallen = len(lista)
 
 for i in abcs:
 	letteriter1 += 1
@@ -53,14 +54,30 @@ for i in abcs:
 		
 		
 	#print(f'Letter result: La letra "{abcs[letteriter1]}" apareció {resultcount} veces en total.\n')
-
+letteriter1 = -1
 for i in abcs:
 	letteriter2 = 0
 	letteriter1 += 1
 	for j in abcs:
-		mix = abcs[letteriter1] + abcs2[letteriter2]
+		syllable = abcs[letteriter1] + abcs2[letteriter2]
 		letteriter2 += 1
-		print(mix)
+		print(syllable)
+
+		for persona in lista:
+			
+			iter1 = -1
+			iter2 = iter1 + 1
+			persona = persona + " "
+			for sample in persona:
+				newsample = str(persona[iter1] + persona[iter2])
+
+				if newsample.lower() == syllable:
+					print(f"Sample: {syllable} found in {persona}")
+				iter1 += 1
+				#print(newsample)
+				
+
+
 
 
 
@@ -68,12 +85,13 @@ for i in abcs:
 
 
 #Resultados al final
-print(f"Se analizaron {len(abcs)} letras.")
-print(f"La lista de letras buscadas son: {abcs}.")
-print(f"Hay {len(lista)} alumnos en la lista.")
-print(f"Hay {chartot} caracteres en total.")
-#print(f'Final Result: "{abcs[0]}" se encontró {resultcount} veces en total.')
-print(f"Se iteró la búsqueda {linecount} veces.")
+def pt_results():
+	print(f"Se analizaron {len(abcs)} letras.")
+	print(f"La lista de letras buscadas son: {abcs}.")
+	print(f"Hay {initiallen} alumnos en la lista.")
+	print(f"Hay {chartot} caracteres en total.")
+	#print(f'Final Result: "{abcs[0]}" se encontró {resultcount} veces en total.')
+	print(f"Se iteró la búsqueda {linecount} veces.")
 
 #Resultados de análisis
 for i in letrasunicas:
@@ -82,7 +100,5 @@ for i in letrasunicas:
 	print(f"Letras Unicas {letrasunicas[0 + n]}")
 	n += 1
 
-print(f"lista: {lista}")
-	#else:
-	#	print(f"Not found anywhere {count}.")
+
 
