@@ -73,11 +73,12 @@ for i in abcs:
 
 		if resultcount == 1:
 			personasunicas.append(personaunica)
-			
 			try:
-				lista.remove(personaunica)
+				indexpersonaunica = lista.index(personaunica[0:len(personaunica)-1])
+				lista.pop(indexpersonaunica)
+				#lista.remove(personaunica)
 			except:
-				print("")
+				print(f"{personaunica} tiene varias sílabasunicas")
 				#print(f"{personaunica} ya no esta en la lista")
 			silabasunicas.append(silabaunica)
 		resultcount = 0
