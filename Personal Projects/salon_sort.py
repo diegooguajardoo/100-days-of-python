@@ -73,9 +73,11 @@ for i in abcs:
 		#print(syllable)
 
 		if resultcount == 1:
-			if any.personasunicas == personaunica:
-				print("evaluate if syllable is closer")
-			else:
+			personaunica = personaunica.strip()
+			try:
+				if personasunicas.index(personaunica) > 0: #en texto si se cumple la funcion
+					print("evaluate if syllable is closer")
+			except:
 				personasunicas.append(personaunica)
 
 				try:
