@@ -1,6 +1,4 @@
-import itertools
 n = 0
-alumnos = 0
 totalcaracteresind = 0
 abcs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
 abcs2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] 
@@ -23,6 +21,7 @@ listastr = ["Regina Aguirre Corvera", "Juan Carlos Arguelles Jaramillo", "Eugeni
             "Marcela Morales De la Garza", "Ana Paula Morales González", "Mónica Daniela Pedraza Galván", "María Fernanda Pérez Castillo", "Diego Alejandro Pérez Frías", "Maximiliano Roca Cavazos", "César Zahid Rosales", "María Fernanda Ruelas Reza", "Jorge Salazar Gaona", "Paulina Solis Cruz", "Isabella Tamez Cárdenas", "David Melchidek Tompkins Gómez", "Melissa Treviño García", "Luis Gabriel Zambrano Kunte"]
 initiallen = len(lista)
 
+#SINGLE SEARCH
 for i in abcs:
 	letteriter1 += 1
 	print(f"RESULTS FOR {abcs[letteriter1]}.")
@@ -103,13 +102,10 @@ for i in abcs:
 					personaunica = persona
 					silabaunica = syllable
 
-					#continue
 				
 				iter1 += 1
 				linecount2 += 1
-				#print(newsample)
-		#if resultcount == 1:
-		#	silabasunicas.append(syllable)
+
 				
 
 
@@ -128,11 +124,19 @@ def pt_results():
 	print(f"\nHay {initiallen} alumnos en la lista.")
 	print(f"Hay {chartot} caracteres en total.")
 	#print(f'Final Result: "{abcs[0]}" se encontró {resultcount} veces en total.')
+	print(f"Se iteró la búsqueda para letras sencillas {linecount} veces.\n")
+	print("SINGLE SEARCH RESULTS")
+	print(f"Letras Unicas {letrasunicas}")
+
+	print(f"\nMINIMO DE SILABAS UNICAS: {len(silabasunicas)}")
+	print(silabasunicas)
+	print(f"Se iteró la segunda búsqueda {linecount2} veces.")
+	tiempo = round((chartot * int(len(abcs)) * 2)/int(linecount2),2)
+	print(tiempo)
+	print(len(lista))
+	print(f'{personasunicas}')
 
 pt_results()
-print(f"Se iteró la búsqueda para letras sencillas {linecount} veces.\n")
-print("SINGLE SEARCH RESULTS")
-print(f"Letras Unicas {letrasunicas}")
 
 for i in letrasunicas:
 	print(f" {i}. {personasunicas[0 + n]} tiene la letra {letrasunicas[0 + n]}")
@@ -144,11 +148,3 @@ print("DOUBLE SEARCH RESULTS")
 for i in silabasunicas:
 	print(f"{i} part of {personasunicas[0 + n]}")
 	n += 1
-
-print(f"\nMINIMO DE SILABAS UNICAS: {len(silabasunicas)}")
-print(silabasunicas)
-print(f"Se iteró la segunda búsqueda {linecount2} veces.")
-tiempo = round((chartot * int(len(abcs)) * 2)/int(linecount2),2)
-print(tiempo)
-print(len(lista))
-print(f'{personasunicas}')
