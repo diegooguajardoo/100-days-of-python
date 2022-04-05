@@ -1,13 +1,10 @@
-import time
-from replit import clear
+from datetime import datetime
 
-def refresh():
-	seconds = time.time()
-	local_time = time.ctime(seconds)
-	print("Local time:", local_time)
+now = datetime.now()
 
+current_time = now.strftime("%H:%M:%S")
+print("Hora actual: ", current_time)
 
-while input("Refresh?") == "ok":
-	
-	refresh()
-	clear()
+parcels = datetime(2022,4,2,20,15,00)
+print(parcels)
+
