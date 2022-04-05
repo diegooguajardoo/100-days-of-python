@@ -8,7 +8,7 @@ while True:
 	if bider != "exit":
 		amount = int(input("How much would you want to put? \n"))
 		addbider(bider, amount)
-		clear()
+		#clear()
 	else:
 		break
 
