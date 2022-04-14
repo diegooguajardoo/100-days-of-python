@@ -1,0 +1,113 @@
+############### Our Blackjack House Rules #####################
+
+## The the Ace can count as 11 or 1.
+
+##################### Hints #####################
+
+#Hint 3: Download and read this flow chart I've created: 
+#   https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
+
+#Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
+#11 is the Ace.
+#cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+#Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
+#user_cards = []
+#computer_cards = []
+
+#Hint 6: Create a function called calculate_score() that takes a List of cards as input 
+#and returns the score. 
+#Look up the sum() function to help you do this.
+
+#Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
+
+#Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+
+#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+
+#Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+
+#Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+
+#Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+
+#Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
+
+#Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
+
+import random
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+computer_list = []
+user_list = []
+fwinner = None
+
+#deal new game
+def deal():
+	for i in range(0,2):
+		choice = random.choice(cards)
+		user_list.append(choice)
+	for i in range(0,2):
+		choice = random.choice(cards)
+		computer_list.append(choice)
+def current_winner():
+	if sum(computer_list) == 21:
+		print("Computer has blackjack!")
+		results(current_winner)
+		return "computer"
+		exit()
+
+	if sum(user_list) == 21:
+		print("User has blackjack!")
+		results(current_winner)
+		if current_winner == "computer":
+			return "draw"
+		else:
+			return "user"
+			exit()
+
+	if sum(user_list) > 21:
+		results(current_winner)
+		return "computer"
+
+	if sum(user_list) > sum(computer_list):
+		return "user"
+	elif sum(user_list) == sum(computer_list):
+		return "draw"
+	else:
+		return "computer"
+def results(win):
+	print(f"Winner is {win}")  
+	print(f"Computer had {sum(computer_list)} {computer_list}")
+	print(f"User had {sum(user_list)} {user_list}")
+
+def game():
+	game_active = True
+		
+	while game_active == True:
+		print(f"User has {sum(user_list)} {user_list}")
+		print(f"Computer has {computer_list[0]}")
+		#user_turn
+		current_winner()
+		
+		cont = input("Do you want another card? Enter Y or N:\n")
+		if cont == "Y":
+			game_active = True
+			choice = random.choice(cards)
+			user_list.append(choice)
+		else:
+			game_active = False
+		
+	#dealer_turn
+	if current_winner == "user":
+		game_active = True
+		while sum(computer_list) < 17:
+			choice = random.choice(cards)
+			computer_list.append(choice)
+			current_winner()
+	else:
+		exit()
+deal()
+current_winner()
+game()
+
+results()
