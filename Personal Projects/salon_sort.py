@@ -84,7 +84,7 @@ for i in abcs:
 					#lista.pop(indexpersonaunica)
 					#lista.remove(personaunica)
 				except:
-					print(f"{personaunica} tiene varias sílabasunicas")
+					print(f"{personaunica} tiene varias {syllable}")
 					#print(f"{personaunica} ya no esta en la lista")
 			silabasunicas.append(silabaunica)
 		resultcount = 0
